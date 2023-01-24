@@ -1,0 +1,57 @@
+{
+    "stat data": {
+        "blood bank": 106.0,
+        "damage per hit": 5.0,
+        "total damage dealt": 166.0,
+        "attack interval": 1.5,
+        "horizontal attack span": 1,
+        "monster health": 80.0,
+        "monsters killed": 0,
+        "lanes traveled": 23
+    },
+    "location data": {
+        "player cell": "c2xr1",
+        "monster cells": [
+            "c0xr1",
+            "c1xr4"
+        ],
+        "env layout": {
+            "c0xr0": "grass_with_tree",
+            "c0xr1": "grass_full",
+            "c0xr2": "grass_full",
+            "c0xr3": "grass_full",
+            "c0xr4": "grass_with_tree",
+            "c0xr5": "grass_full",
+            "c1xr0": "grass_with_tree",
+            "c1xr1": "grass_with_tree",
+            "c1xr2": "grass_full",
+            "c1xr3": "grass_with_tree",
+            "c1xr4": "grass_full",
+            "c1xr5": "grass_with_tree",
+            "c2xr0": "grass_full",
+            "c2xr1": "grass_with_tree",
+            "c2xr2": "grass_with_tree",
+            "c2xr3": "grass_full",
+            "c2xr4": "grass_with_tree",
+            "c2xr5": "grass_with_tree",
+            "c3xr0": "grass_full",
+            "c3xr1": "grass_with_tree",
+            "c3xr2": "grass_with_tree",
+            "c3xr3": "grass_with_tree",
+            "c3xr4": "grass_full",
+            "c3xr5": "grass_with_tree",
+            "c4xr0": "grass_full",
+            "c4xr1": "grass_full",
+            "c4xr2": "grass_with_tree",
+            "c4xr3": "grass_with_tree",
+            "c4xr4": "grass_with_tree",
+            "c4xr5": "grass_full",
+            "c5xr0": "grass_full",
+            "c5xr1": "grass_full",
+            "c5xr2": "grass_full",
+            "c5xr3": "grass_with_tree",
+            "c5xr4": "grass_with_tree",
+            "c5xr5": "grass_with_tree"
+        }
+    }
+}
