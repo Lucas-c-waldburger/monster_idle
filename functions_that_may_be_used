@@ -1,0 +1,59 @@
+# ---------------END OF ATTACK LOOP-------------- #
+
+# Makes note of cell that player and monsters started the loop on
+
+player.start_of_loop_xy = player.current_cell_xy
+for monster in active_monster_list:
+    monster.start_of_loop_xy = monster.current_cell_xy
+
+
+# re-place buttons ONLY IF SPRITE MOVED THIS LOOP
+
+sprite_moved = False
+if player.current_cell_xy != player.start_of_loop_xy:
+    sprite_moved = True
+else:
+    for monster in active_monster_list:
+        if monster.start_of_loop_xy != monster.current_cell_xy:
+            sprite_moved = True
+if sprite_moved:
+    place_move_buttons()
+
+
+# -------------UPDATING STATS------------- #
+
+# Attempt to make a universal update stat function that can have any of the stats passed through
+
+def update_stat(str, var, text, **kwargs):
+     if kwargs['operation'] is not None:
+         perform_operation = operations_dict[kwargs['operation']]
+         value = kwargs['value']
+         var = perform_operation(var, value)
+
+     str.set(text)
+
+# -----------FLIPPING CHAR SPRITES------------ #
+
+
+def create_regular_and_flipped_sprite_lists():
+    sprite_directory = 'sprite'
+    for filename in os.listdir(sprite_directory):
+        file = os.path.join(sprite_directory, filename)
+        if os.path.isfile(file):
+            sprite_pil_image = Image.open(file)
+            sprite_pil_image_flipped = sprite_pil_image.transpose(Image.FLIP_LEFT_RIGHT)
+
+            # convert PIL image object to Tkinter PhotoImage object
+            sprite_tk_image = ImageTk.PhotoImage(sprite_pil_image)
+            sprite_tk_image_flipped = ImageTk.PhotoImage(sprite_pil_image_flipped)
+            player.current_facing_sprite_list.append(sprite_tk_image)
+            player.flipped_facing_sprite_list.append(sprite_tk_image_flipped)
+
+create_regular_and_flipped_sprite_lists()
+print(player.current_facing_sprite_list)
+print(player.flipped_facing_sprite_list)
+
+for k in player.sprite_dict:
+    player.sprite_dict[k] = player.current_facing_sprite_list.pop(0)
+
+print(player.sprite_dict)
